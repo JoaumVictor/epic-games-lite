@@ -1,0 +1,22 @@
+@mixin fastDisplay($x, $y, $z) {
+  display: flex;
+  align-items: center;
+  justify-content: $x;
+  flex-flow: $y $z;
+}
+
+.CarouselColumn {
+  @include fastDisplay(space-evenly, column, nowrap);
+  height: 100%;
+  width: 20%;
+
+  span {
+    @include fastDisplay(space-evenly, column, nowrap);
+    height: 16.5%;
+    width: 100%;
+
+    img {
+      width: 75%;
+    }
+  }
+}

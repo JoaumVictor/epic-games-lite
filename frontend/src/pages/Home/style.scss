@@ -1,0 +1,11 @@
+@mixin fastDisplay($x, $y, $z) {
+  display: flex;
+  align-items: center;
+  justify-content: $x;
+  flex-flow: $y $z;
+}
+
+.HomePage {
+  @include fastDisplay(space-evenly, row, wrap);
+  width: 100vw;
+}

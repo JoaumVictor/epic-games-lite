@@ -1,0 +1,20 @@
+@mixin fastDisplay($x, $y, $z) {
+  display: flex;
+  align-items: center;
+  justify-content: $x;
+  flex-flow: $y $z;
+}
+
+.MainCarousel {
+  @include fastDisplay(space-evenly, row, nowrap);
+  height: 70vh;
+  width: 80%;
+
+  .CarouselBanner {
+    width: 80%;
+
+    img {
+      width: 100%;
+    }
+  }
+}

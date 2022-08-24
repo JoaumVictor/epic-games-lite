@@ -1,0 +1,30 @@
+@mixin fastDisplay($x, $y, $z) {
+  display: flex;
+  align-items: center;
+  justify-content: $x;
+  flex-flow: $y $z;
+}
+
+.HomeNavigation {
+  @include fastDisplay(space-evenly, row, nowrap);
+  background-color: transparent;
+  height: 60px;
+  width: 100%;
+
+  .HomeSearchBox {
+    @include fastDisplay(space-evenly, row, nowrap);
+    width: 20%;
+    background-color: white;
+    border-radius: 8px;
+
+    input[type='text'] {
+      border: none;
+      background-color: transparent;
+      color: black;
+      height: 30px;
+      padding-left: 5px;
+      outline: none;
+      width: 100%;
+    }
+  }
+}
