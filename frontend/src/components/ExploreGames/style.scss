@@ -1,0 +1,40 @@
+@mixin fastDisplay($x, $y, $z) {
+  display: flex;
+  align-items: center;
+  justify-content: $x;
+  flex-flow: $y $z;
+}
+
+.exploreGamesContainer {
+  @include fastDisplay(space-between, row, nowrap);
+  height: 500px;
+  width: 94%;
+
+  img {
+    border-radius: 16px;
+    width: 60%;
+  }
+
+  section {
+    @include fastDisplay(space-evenly, column, nowrap);
+    align-items: flex-start;
+    width: 37%;
+    height: 50%;
+    color: white;
+
+    button {
+      padding: 14px;
+      cursor: pointer;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      width: 110px;
+    }
+
+    p {
+      &:nth-child(2) {
+        color: rgb(159, 157, 157);
+      }
+    }
+  }
+}

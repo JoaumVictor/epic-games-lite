@@ -37,7 +37,11 @@
       padding: auto 20px;
       img {
         border-radius: 8px;
+        transition:all 0.3s;
         width: 100%;
+        &:hover {
+          filter: brightness(1.1);
+        }
       }
       p {
         font-size: 0.9rem;

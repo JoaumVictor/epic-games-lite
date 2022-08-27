@@ -1,18 +1,12 @@
 import "./style.scss";
+import { GameObjType } from "../../@types";
 
-interface IGamesBoxProps {
+type GamesBoxProps = {
   titleBox: string;
-  games: {
-    name: string;
-    urlImage: string;
-    price: number;
-    description: string;
-    genrer: string[];
-    caracters: string[];
-  }[];
+  games: GameObjType[];
 }
 
-export default function GamesBox({ titleBox, games }: IGamesBoxProps) {
+export default function GamesBox({ titleBox, games }: GamesBoxProps) {
   return (
     <div className="MainGamesbox">
       <section className="MainGamesBoxHeader">
@@ -27,7 +21,7 @@ export default function GamesBox({ titleBox, games }: IGamesBoxProps) {
           <div className="GameCard">
             <img src={game.urlImage} alt={game.name} />
             <p>{game.name}</p>
-            <p>R$ {game.price}</p>
+            { typeof game.price === "number" ? <p>R$ {game.price}</p> : <p>{game.price}</p> }
           </div>
         ))}
       </section>
