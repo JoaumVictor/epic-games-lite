@@ -1,0 +1,73 @@
+@mixin fastDisplay($x, $y, $z) {
+  display: flex;
+  align-items: center;
+  justify-content: $x;
+  flex-flow: $y $z;
+}
+
+@mixin marginX($x) {
+  margin-left: $x;
+  margin-right: $x;
+}
+
+@mixin marginY($x) {
+  margin-top: $x;
+  margin-bottom: $x;
+}
+
+$light-gray: rgb(163, 163, 163);
+
+.HomeNavigation {
+  @include fastDisplay(flex-start, row, nowrap);
+  background-color: transparent;
+  height: 100px;
+  width: 100%;
+
+  .HomeSearchBox {
+    @include fastDisplay(space-evenly, row, nowrap);
+    width: 16%;
+    height: 40px;
+    padding-left: 10px;
+    background-color: #202020;
+    border-radius: 22px;
+    @include marginX(10px);
+
+    input[type='text'] {
+      border: none;
+      background-color: transparent;
+      color: white;
+      height: 30px;
+      padding-left: 5px;
+      outline: none;
+      width: 100%;
+
+      &::placeholder {
+        color: $light-gray;
+      }
+    }
+
+    .searchIcon {
+      color: $light-gray;
+      font-size: 20px;
+    }
+  }
+
+  .tagsBox {
+    @include fastDisplay(flex-start, row, nowrap);
+    width: 64%;
+  }
+
+  .optionsBox {
+    @include fastDisplay(flex-start, row, nowrap);
+    width: 20%;
+  }
+
+  .tag {
+    color: $light-gray;
+    @include marginX(10px);
+
+    &:hover {
+      color: white;
+    }
+  }
+}
